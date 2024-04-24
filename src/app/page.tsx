@@ -1,95 +1,54 @@
 import Image from "next/image";
 import styles from "./page.module.css";
+import React from "react";
 
-export default function Home() {
+// Pass in the string "Bob" as the 1st argument, the props argument. And pass in the number 30 as the value for the "initialAge" function
+// class UserProfile extends React.Component {
+//   constructor(props:any) {
+//     super(props);
+//     this.state = {
+//       age: props.initialAge
+//     };
+//   }
+
+  // celebrateBirthday = () => {
+  //   this.setState((mystate=18) => ({
+  //     age: mystate.age+1
+  //   }));
+  // }
+
+//   render() {
+//     return (
+//       <div>
+//       <h1> Profile </h1>
+//       {/* <p>Age: {this.state.age}</p> */}
+//       <button>Happy Birthday!</button>
+//       </div>
+//     );
+//   }
+// }
+
+//Convert the class UserProfile as a functional component that takes 1 prop as an argument
+
+function UserProfile(props: any) {
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
-
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore starter templates for Next.js.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+    <div>
+    <h1> Profile </h1>
+    <h1>{props.name}</h1>
+    <h1>{props.number}</h1>
+    <button>Happy Birthday!</button>
+    </div>
   );
 }
+{/* <><UserProfile name="Bob" /><UserProfile number /></>30 /> */}
+
+export default function User() {
+  return <UserProfile name="Bob" number="30" />;
+ }
+
+ //need to export the function that has the values not the function that has the props.
+
+
+
+
+
